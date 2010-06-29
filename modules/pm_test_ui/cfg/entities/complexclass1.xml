@@ -1,0 +1,85 @@
+<?xml version='1.0'?>
+<!DOCTYPE entity SYSTEM "cfg/entity.dtd">
+<entity id="complexclass1" clazz="org.jpos.ee.model.ComplexClass1">
+    <dataAccess class="org.jpos.ee.ui.DataAccessComplexClass1" />
+    <operations>
+        <operation id="list" enabled="true" scope="item" />
+        <operation id="show" enabled="true" scope="item" display="edit list" />
+        <operation id="add" enabled="true" scope="general" />
+        <operation id="edit" enabled="true" scope="item" display="edit show list" />
+        <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
+    </operations>
+
+    <field id="id" property="id" width="30" display="edit show list"/>
+    <field id="amount" width="100" display="all">
+        <converters>
+            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
+                <properties>
+                    <property name="filename" value="cfg/converters/show.decimal.converter" />
+                    <property name="prefix" value="U$S " />
+                    <property name="suffix" value=" .-" />
+                    <property name="format" value="#0.##" />
+                </properties>
+            </converter>
+            <converter class="org.jpos.ee.pm.struts.converter.EditDecimalConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="date" width="70" display="all">
+        <converters>
+            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="list show" >
+                <properties>
+                    <property name="filename" value="cfg/converters/show.date.converter" />
+                    <property name="format" value="dd/MM/yyyy" />
+                </properties>
+            </converter>
+        </converters>
+        <converter class="org.jpos.ee.pm.struts.converter.EditDateConverter">
+            <properties>
+                <property name="format" value="dd/MM/yyyy" />
+            </properties>
+        </converter>
+    </field>
+    <field id="datetime" width="150" display="all" >
+        <converters>
+            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="list show" >
+                <properties>
+                    <property name="filename" value="cfg/converters/show.date.converter" />
+                    <property name="format" value="dd/MM/yyyy HH:mm:ss" />
+                </properties>
+            </converter>
+        </converters>
+    </field>
+    <field id="description">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">
+                <properties>
+                    <property name="max-length" value="50" />
+                </properties>
+            </converter>
+        </converters>
+    </field>
+    <field id="active" width="30" display="all" align="center">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.ShowBooleanConverter" operations="list show" />
+            <converter class="org.jpos.ee.pm.struts.converter.EditBooleanConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="key" width="150" >
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.ShowLocalizedStringConverter" operations="show list" />
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="size" width="50" >
+        <converters>
+            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
+                <properties>
+                    <property name="filename" value="cfg/converters/show.tostring.converter" />
+                    <property name="suffix" value=" cm" />
+                </properties>
+            </converter>
+            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add ediit" />
+        </converters>
+        
+    </field>
+</entity>

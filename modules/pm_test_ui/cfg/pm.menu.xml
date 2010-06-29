@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+    <menu-list text="pm.menu.list.monitor" perm="">
+        <menu-item text="pm.menu.item.q2log" perm="">
+            <location id="pmstruts" value="/monitor.do?pmid=q2" />
+            <external>false</external>
+        </menu-item>
+    </menu-list>
+
+    <menu-list text="pm.menu.list.business" perm="">
+        <menu-item text="pm.menu.item.simpleclass" perm="">
+            <location id="pmstruts" value="/list.do?pmid=simpleclass" />
+            <external>false</external>
+        </menu-item>
+        <menu-item text="pm.menu.item.complexclass1" perm="">
+            <location id="pmstruts" value="/list.do?pmid=complexclass1" />
+            <external>false</external>
+        </menu-item>
+        <menu-item text="pm.menu.item.parentclass" perm="">
+            <location id="pmstruts" value="/list.do?pmid=parentclass" />
+            <external>false</external>
+        </menu-item>
+    </menu-list>
+
+    <menu-list text="pm.menu.list.main.rose" perm="">
+        <menu-list text="pm.menu.list.rose" perm="">
+            <menu-list text="pm.menu.list.rose" perm="">
+                <menu-list text="pm.menu.list.rose" perm="">
+                    <menu-item text="pm.menu.item.pm" perm="">
+                        <location id="pmstruts" value="http://github.com/jpaoletti/jPOS-Presentation-Manager" />
+                        <external>true</external>
+                    </menu-item>
+                </menu-list>
+            </menu-list>
+        </menu-list>
+    </menu-list>
+</menu>
