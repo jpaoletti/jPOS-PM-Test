@@ -1,0 +1,38 @@
+package org.jpos.ee.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.jpos.ee.model.ComplexClass2;
+import org.jpos.ee.model.SimpleClass;
+import org.jpos.ee.pm.core.PMContext;
+import org.jpos.ee.pm.core.PMException;
+import org.jpos.ee.pm.core.PresentationManager;
+
+/**
+ *
+ * @author jpaoletti
+ */
+public class DataAccessComplexClass2 extends DataAccessTest {
+
+    @Override
+    protected void fill() {
+        try {
+            List<?> childs = PresentationManager.getPm().getEntity("simpleclass").getList(new PMContext(), null);
+            list = new ArrayList<Object>();
+            int top = random(5, 30);
+            for (int i = 0; i < top; i++) {
+                ComplexClass2 o = new ComplexClass2();
+                o.setId(i);
+                o.setSimpleClass((SimpleClass) childs.get(random(0, childs.size()-1)));
+                o.setSimpleClasses(new ArrayList<SimpleClass>());
+                int x = random(1, childs.size() - 2);
+                for (int j = x - 1; j < x + 1; j++) {
+                    o.getSimpleClasses().add((SimpleClass) childs.get(j));
+                }
+                list.add(o);
+            }
+        } catch (PMException ex) {
+            PresentationManager.pm.error(ex);
+        }
+    }
+}

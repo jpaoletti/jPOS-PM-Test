@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<!DOCTYPE entity SYSTEM "cfg/entity.dtd">
+<entity id="complexclass2" clazz="org.jpos.ee.model.ComplexClass2">
+    <dataAccess class="org.jpos.ee.ui.DataAccessComplexClass2" />
+    <operations>
+        <operation id="list" enabled="true" scope="item">
+            <properties>
+                <property name="operation-column-width" value="1px" />
+            </properties>
+        </operation>
+        <operation id="show" enabled="true" scope="item" display="edit list" />
+        <operation id="add" enabled="true" scope="general" />
+        <operation id="edit" enabled="true" scope="item" display="edit show list" />
+        <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
+    </operations>
+
+    <field id="id" property="id" width="30" display="edit show list"/>
+    <field id="simpleClass" display="edit show add list">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditSingleAggregationConverter" operations="add edit">
+                <properties>
+                    <property name="entity" value="simpleclass" />
+                </properties>
+            </converter>
+        </converters>
+    </field>
+    <field id="simpleClasses" display="edit show add">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.ShowCollectionConverter" operations="show" />
+            <converter class="org.jpos.ee.pm.struts.converter.EditCollectionConverter" operations="add edit">
+                <properties>
+                    <property name="entity" value="simpleclass" />
+                    <property name="collection-class" value="java.util.ArrayList" />
+                </properties>
+            </converter>
+        </converters>
+    </field>
+</entity>

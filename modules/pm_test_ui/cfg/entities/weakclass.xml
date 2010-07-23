@@ -1,9 +1,15 @@
 <?xml version='1.0'?>
 <!DOCTYPE entity SYSTEM "cfg/entity.dtd">
-<entity id="simpleclass" clazz="org.jpos.ee.model.SimpleClass">
-    <dataAccess class="org.jpos.ee.ui.DataAccessSimpleClass" />
+<entity id="weakclass" clazz="org.jpos.ee.model.WeakClass">
+    <dataAccess class="org.jpos.ee.ui.DataAccessWeakClass" />
+    <owner>
+        <entityId>parentclass</entityId>
+        <entityProperty>weaks</entityProperty>
+        <localProperty>parent</localProperty>
+        <entityCollectionClass>java.util.ArrayList</entityCollectionClass>
+    </owner>
     <operations>
-        <operation id="list" enabled="true" scope="item" display="all" >
+        <operation id="list" enabled="true" scope="item" display="all">
             <properties>
                 <property name="operation-column-width" value="1px" />
             </properties>
@@ -13,7 +19,6 @@
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
         <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
     </operations>
-    <field id="id" property="id" width="30" display="edit show list"/>
     <field id="description">
         <converters>
             <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">

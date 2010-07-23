@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <!DOCTYPE entity SYSTEM "cfg/entity.dtd">
-<entity id="simpleclass" clazz="org.jpos.ee.model.SimpleClass">
-    <dataAccess class="org.jpos.ee.ui.DataAccessSimpleClass" />
+<entity id="parentclass" clazz="org.jpos.ee.model.ParentClass">
+    <dataAccess class="org.jpos.ee.ui.DataAccessParentClass" />
     <operations>
         <operation id="list" enabled="true" scope="item" display="all" >
             <properties>
@@ -13,12 +13,16 @@
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
         <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
     </operations>
-    <field id="id" property="id" width="30" display="edit show list"/>
-    <field id="description">
+    <field id="id" >
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">
+            <converter class="org.jpos.ee.pm.struts.converter.EditIntegerConverter" operations="edit add" />
+        </converters>
+    </field>
+    <field id="weaks" display="show edit">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.WeakConverter" operations="show edit" >
                 <properties>
-                    <property name="max-length" value="50" />
+                    <property name="weak-entity" value="weakclass" />
                 </properties>
             </converter>
         </converters>

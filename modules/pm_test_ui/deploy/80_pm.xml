@@ -1,6 +1,6 @@
 <presentation-manager class="org.jpos.ee.pm.struts.PMStrutsService"  logger="Q2">
     <property name="debug" value="true" /> 
-    <property name="appversion" value="1.0.0" />
+    <property name="appversion" value="1.1.0" />
     <property name="login-required" value="false" />
     <property name="ignore-db" value="true" />
     
@@ -8,4 +8,10 @@
 
     <property name="entity" value="cfg/entities/simpleclass.xml" />
     <property name="entity" value="cfg/entities/complexclass1.xml" />
+    <property name="entity" value="cfg/entities/complexclass2.xml" />
+    <property name="entity" value="cfg/entities/weakclass.xml" />
+    <property name="entity" value="cfg/entities/parentclass.xml" />
+
+    <!-- Monitors -->
+    <property name="monitor" value="cfg/monitors/q2.xml" />
 </presentation-manager>

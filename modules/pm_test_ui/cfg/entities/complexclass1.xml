@@ -3,7 +3,11 @@
 <entity id="complexclass1" clazz="org.jpos.ee.model.ComplexClass1">
     <dataAccess class="org.jpos.ee.ui.DataAccessComplexClass1" />
     <operations>
-        <operation id="list" enabled="true" scope="item" />
+        <operation id="list" enabled="true" scope="item">
+            <properties>
+                <property name="operation-column-width" value="1px" />
+            </properties>
+        </operation>
         <operation id="show" enabled="true" scope="item" display="edit list" />
         <operation id="add" enabled="true" scope="general" />
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
@@ -11,7 +15,7 @@
     </operations>
 
     <field id="id" property="id" width="30" display="edit show list"/>
-    <field id="amount" width="100" display="all">
+    <field id="amount" width="100" display="all" align="right">
         <converters>
             <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
                 <properties>
@@ -33,15 +37,15 @@
                 </properties>
             </converter>
         </converters>
-        <converter class="org.jpos.ee.pm.struts.converter.EditDateConverter">
+        <converter class="org.jpos.ee.pm.struts.converter.EditDateConverter" operations="add edit">
             <properties>
                 <property name="format" value="dd/MM/yyyy" />
             </properties>
         </converter>
     </field>
-    <field id="datetime" width="150" display="all" >
+    <field id="datetime" width="130" display="all" >
         <converters>
-            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="list show" >
+            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="all" >
                 <properties>
                     <property name="filename" value="cfg/converters/show.date.converter" />
                     <property name="format" value="dd/MM/yyyy HH:mm:ss" />
@@ -78,7 +82,7 @@
                     <property name="suffix" value=" cm" />
                 </properties>
             </converter>
-            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add ediit" />
+            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add edit" />
         </converters>
         
     </field>

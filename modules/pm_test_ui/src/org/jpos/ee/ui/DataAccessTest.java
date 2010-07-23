@@ -25,11 +25,13 @@ public abstract class DataAccessTest implements DataAccess{
 
     public List<?> list(PMContext ctx, EntityFilter filter, Integer from, Integer count) throws PMException {
         if(list == null) fill();
-        if(count(ctx) < count) return list;
-        if(count(ctx) < from)  return null;
-        if(from > count)       return null;
-        int fpc = from + count;
-        return list.subList(from, (int) ((fpc > count(ctx)) ? count(ctx) : fpc));
+        int f = (from == null)?0:from;
+        int c = (int) ((count == null) ? count(ctx) : count);
+        System.out.println(String.format("count: %d ; c: %d, f: %d", count(ctx), c, f ));
+        if(count(ctx) < c)  return list;
+        if(count(ctx) < f)  return null;
+        int fpc = f + c;
+        return list.subList(f, (int) ((fpc > count(ctx)) ? count(ctx) : fpc));
     }
 
     public Long count(PMContext ctx) throws PMException {
