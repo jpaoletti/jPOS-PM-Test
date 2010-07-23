@@ -10,6 +10,7 @@ modules/jpos
 modules/pm_core
 modules/pm_security_core
 modules/pm_struts
+modules/commons
 build/
 dist/
 nb*
