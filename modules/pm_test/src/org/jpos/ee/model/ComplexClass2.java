@@ -23,18 +23,9 @@ import java.util.List;
  *
  * @author jpaoletti
  */
-public class ComplexClass2 {
-    private Integer id;
+public class ComplexClass2 extends SimpleClass{
     private SimpleClass simpleClass;
     private List<SimpleClass> simpleClasses;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public SimpleClass getSimpleClass() {
         return simpleClass;

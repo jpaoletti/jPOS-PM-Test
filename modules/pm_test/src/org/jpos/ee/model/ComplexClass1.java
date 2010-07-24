@@ -24,12 +24,10 @@ import java.util.Date;
  *
  * @author jpaoletti
  */
-public class ComplexClass1 {
-    private Integer id;
+public class ComplexClass1 extends SimpleClass{
     private BigDecimal amount;
     private Date date;
     private Date datetime;
-    private String description;
     private Boolean active;
     private String password;
     private String key;
@@ -67,22 +65,6 @@ public class ComplexClass1 {
         this.datetime = datetime;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getKey() {
         return key;
     }
@@ -116,7 +98,7 @@ public class ComplexClass1 {
             return false;
         }
         final ComplexClass1 other = (ComplexClass1) obj;
-        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+        if (this.getId() != other.getId() && (this.getId() == null || !this.getId().equals(other.getId()))) {
             return false;
         }
         return true;
@@ -125,7 +107,7 @@ public class ComplexClass1 {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 83 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
         return hash;
     }
 

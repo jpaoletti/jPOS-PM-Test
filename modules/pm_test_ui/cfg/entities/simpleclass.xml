@@ -9,11 +9,19 @@
             </properties>
         </operation>
         <operation id="show" enabled="true" scope="item" display="edit list" />
-        <operation id="add" enabled="true" scope="general" display="all" />
+        <operation id="add" enabled="true" scope="general" display="all" >
+            <validator class="org.jpos.ee.ui.validators.SimpleClassUniqueIdValidator"/>
+        </operation>
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
         <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
+        <operation id="sort" scope="general" display="list" />
     </operations>
-    <field id="id" property="id" width="30" display="edit show list"/>
+
+    <field id="id" property="id" width="30" display="add edit show list sort">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add" />
+        </converters>
+    </field>
     <field id="description">
         <converters>
             <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">

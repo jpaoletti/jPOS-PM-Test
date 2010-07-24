@@ -1,3 +1,20 @@
+/*
+ * jPOS Project [http://jpos.org]
+ * Copyright (C) 2000-2010 Alejandro P. Revilla
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package org.jpos.ee.ui;
 
 import java.util.ArrayList;
@@ -22,7 +39,8 @@ public class DataAccessComplexClass2 extends DataAccessTest {
             int top = random(5, 30);
             for (int i = 0; i < top; i++) {
                 ComplexClass2 o = new ComplexClass2();
-                o.setId(i);
+                o.setId(new Long(i));
+                o.setDescription(String.format("Complex Class II %d", i));
                 o.setSimpleClass((SimpleClass) childs.get(random(0, childs.size()-1)));
                 o.setSimpleClasses(new ArrayList<SimpleClass>());
                 int x = random(1, childs.size() - 2);

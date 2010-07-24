@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <!DOCTYPE entity SYSTEM "cfg/entity.dtd">
-<entity id="parentclass" clazz="org.jpos.ee.model.ParentClass">
+<entity id="parentclass" clazz="org.jpos.ee.model.ParentClass" extendz="simpleclass">
     <dataAccess class="org.jpos.ee.ui.DataAccessParentClass" />
+    <order>id description </order>
     <operations>
         <operation id="list" enabled="true" scope="item" display="all" >
             <properties>
@@ -9,15 +10,12 @@
             </properties>
         </operation>
         <operation id="show" enabled="true" scope="item" display="edit list" />
-        <operation id="add" enabled="true" scope="general" display="all" />
+        <operation id="add" enabled="true" scope="general" display="all" >
+            <validator class="org.jpos.ee.ui.validators.SimpleClassUniqueIdValidator"/>
+        </operation>
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
         <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
     </operations>
-    <field id="id" >
-        <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditIntegerConverter" operations="edit add" />
-        </converters>
-    </field>
     <field id="weaks" display="show edit">
         <converters>
             <converter class="org.jpos.ee.pm.struts.converter.WeakConverter" operations="show edit" >

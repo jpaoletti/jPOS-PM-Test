@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <!DOCTYPE entity SYSTEM "cfg/entity.dtd">
-<entity id="complexclass2" clazz="org.jpos.ee.model.ComplexClass2">
+<entity id="complexclass2" clazz="org.jpos.ee.model.ComplexClass2" extendz="simpleclass">
     <dataAccess class="org.jpos.ee.ui.DataAccessComplexClass2" />
+    <order>id description </order>
     <operations>
         <operation id="list" enabled="true" scope="item">
             <properties>
@@ -9,12 +10,13 @@
             </properties>
         </operation>
         <operation id="show" enabled="true" scope="item" display="edit list" />
-        <operation id="add" enabled="true" scope="general" />
+        <operation id="add" enabled="true" scope="general">
+            <validator class="org.jpos.ee.ui.validators.SimpleClassUniqueIdValidator"/>
+        </operation>
         <operation id="edit" enabled="true" scope="item" display="edit show list" />
         <operation id="delete" enabled="true" scope="item" display="edit show list" confirm="true"/>
     </operations>
 
-    <field id="id" property="id" width="30" display="edit show list"/>
     <field id="simpleClass" display="edit show add list">
         <converters>
             <converter class="org.jpos.ee.pm.struts.converter.EditSingleAggregationConverter" operations="add edit">

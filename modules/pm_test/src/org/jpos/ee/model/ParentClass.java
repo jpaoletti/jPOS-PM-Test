@@ -24,8 +24,7 @@ import java.util.List;
  *
  * @author jpaoletti
  */
-public class ParentClass {
-    private Integer id;
+public class ParentClass extends SimpleClass {
     private List<WeakClass> weaks;
 
     public List<WeakClass> getWeaks() {
@@ -37,17 +36,10 @@ public class ParentClass {
         this.weaks = weaks;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     @Override
     public String toString() {
-        return "ParentClass{" + "id=" + id + '}';
+        return "ParentClass{" + "id=" + getId() + '}';
     }
     
 }
