@@ -3,6 +3,10 @@
 <entity id="complexclass2" clazz="org.jpos.ee.model.ComplexClass2" extendz="simpleclass">
     <dataAccess class="org.jpos.ee.ui.DataAccessComplexClass2" />
     <order>id description </order>
+    <highlights>
+        <highlight field="id" value="3" color="yellow" scope="instance" />
+        <highlight field="id" value="4" color="blue" scope="property" />
+    </highlights>
     <operations>
         <operation id="list" enabled="true" scope="item">
             <properties>
