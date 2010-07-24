@@ -7,6 +7,7 @@ bin
 modules/constants
 modules/jetty6
 modules/jpos
+modules/system
 modules/pm_core
 modules/pm_security_core
 modules/pm_struts
