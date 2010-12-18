@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<external-converters>
+    <external-converter id="edit-50-string">
+        <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">
+            <properties>
+                <property name="max-length" value="50" />
+            </properties>
+        </converter>
+    </external-converter>
+    <external-converter id="edit-long">
+        <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add" />
+    </external-converter>
+    <external-converter id="add-long">
+        <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="edit" />
+    </external-converter>
+    <external-converter id="show-cash">
+        <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
+            <properties>
+                <property name="filename" value="cfg/converters/show.decimal.converter" />
+                <property name="prefix" value="U$S " />
+                <property name="suffix" value=" .-" />
+                <property name="format" value="#0.##" />
+            </properties>
+        </converter>
+    </external-converter>
+
+</external-converters>

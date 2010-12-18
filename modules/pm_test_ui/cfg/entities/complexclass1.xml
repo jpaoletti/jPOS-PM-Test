@@ -19,14 +19,7 @@
 
     <field id="amount" width="100" display="all" align="right">
         <converters>
-            <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
-                <properties>
-                    <property name="filename" value="cfg/converters/show.decimal.converter" />
-                    <property name="prefix" value="U$S " />
-                    <property name="suffix" value=" .-" />
-                    <property name="format" value="#0.##" />
-                </properties>
-            </converter>
+            <econverter id="show-cash" />
             <converter class="org.jpos.ee.pm.struts.converter.EditDecimalConverter" operations="add edit" />
         </converters>
     </field>

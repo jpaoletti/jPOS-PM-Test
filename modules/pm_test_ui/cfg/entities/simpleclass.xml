@@ -19,16 +19,12 @@
 
     <field id="id" property="id" width="30" display="add edit show list sort">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add" />
+            <econverter id="add-long" />
         </converters>
     </field>
     <field id="description">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">
-                <properties>
-                    <property name="max-length" value="50" />
-                </properties>
-            </converter>
+            <econverter id="edit-50-string"/>
         </converters>
     </field>
 </entity>

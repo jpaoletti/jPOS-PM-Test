@@ -3,6 +3,9 @@
     <property name="appversion" value="1.1.0" />
     <property name="login-required" value="false" />
     <property name="ignore-db" value="true" />
+
+    <!-- External Converters -->
+    <property name="external-converters" value="cfg/pmtest.external.conveters.xml" />
     
     <!-- Busissnes Entities -->
 

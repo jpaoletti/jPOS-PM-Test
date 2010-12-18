@@ -21,11 +21,7 @@
     </operations>
     <field id="description">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit">
-                <properties>
-                    <property name="max-length" value="50" />
-                </properties>
-            </converter>
+            <econverter id="edit-50-string"/>
         </converters>
     </field>
 </entity>
