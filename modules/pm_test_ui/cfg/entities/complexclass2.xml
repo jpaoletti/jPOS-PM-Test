@@ -23,22 +23,22 @@
 
     <field id="simpleClass" display="edit show add list">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.EditSingleAggregationConverter" operations="add edit">
+<!--            <converter class="org.jpos.ee.pm.struts.converter.EditSingleAggregationConverter" operations="add edit">
                 <properties>
                     <property name="entity" value="simpleclass" />
                 </properties>
-            </converter>
+            </converter>-->
         </converters>
     </field>
     <field id="simpleClasses" display="edit show add">
-        <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.ShowCollectionConverter" operations="show" />
-            <converter class="org.jpos.ee.pm.struts.converter.EditCollectionConverter" operations="add edit">
+       <converters>
+            <econverter id="show-list" operations="show" />
+<!--            <converter class="org.jpos.ee.pm.struts.converter.EditCollectionConverter" operations="add edit">
                 <properties>
                     <property name="entity" value="simpleclass" />
                     <property name="collection-class" value="java.util.ArrayList" />
                 </properties>
-            </converter>
+            </converter>-->
         </converters>
     </field>
 </entity>

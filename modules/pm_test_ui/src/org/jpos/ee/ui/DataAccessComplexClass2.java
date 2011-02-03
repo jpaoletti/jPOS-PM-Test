@@ -34,7 +34,7 @@ public class DataAccessComplexClass2 extends DataAccessTest {
     @Override
     protected void fill() {
         try {
-            List<?> childs = PresentationManager.getPm().getEntity("simpleclass").getList(new PMContext(), null);
+            List<?> childs = PresentationManager.getPm().getEntity("simpleclass").getList(new PMContext(""), null);
             list = new ArrayList<Object>();
             int top = random(5, 30);
             for (int i = 0; i < top; i++) {

@@ -6,6 +6,7 @@
         <operation id="list" enabled="true" scope="item" display="all" >
             <properties>
                 <property name="operation-column-width" value="1px" />
+                <property name="show-row-number" value="true" />
             </properties>
         </operation>
         <operation id="show" enabled="true" scope="item" display="edit list" />

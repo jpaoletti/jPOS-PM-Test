@@ -18,11 +18,7 @@
     </operations>
     <field id="weaks" display="show edit">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.WeakConverter" operations="show edit" >
-                <properties>
-                    <property name="weak-entity" value="weakclass" />
-                </properties>
-            </converter>
+            <econverter id="weak"/>
         </converters>
     </field>
 </entity>

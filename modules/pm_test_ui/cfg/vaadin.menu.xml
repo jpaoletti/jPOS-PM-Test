@@ -6,22 +6,22 @@
     </menu-item>
     <menu-list text="pm.menu.list.monitor" perm="">
         <menu-item text="pm.menu.item.q2log" perm="">
-            <location id="default" value="/monitor.do?pmid=q2" />
+            <location id="default" value="operation=monitor;monitor=q2" />
         </menu-item>
     </menu-list>
 
     <menu-list text="pm.menu.list.business" perm="">
         <menu-item text="pm.menu.item.simpleclass" perm="">
-            <location id="default" value="/list.do?pmid=simpleclass" />
+            <location id="default" value="operation=list;entity=simpleclass" />
         </menu-item>
         <menu-item text="pm.menu.item.complexclass1" perm="">
-            <location id="default" value="/list.do?pmid=complexclass1" />
+            <location id="default" value="operation=list;entity=complexclass1" />
         </menu-item>
         <menu-item text="pm.menu.item.complexclass2" perm="">
-            <location id="default" value="/list.do?pmid=complexclass2" />
+            <location id="default" value="operation=list;entity=complexclass2" />
         </menu-item>
         <menu-item text="pm.menu.item.parentclass" perm="">
-            <location id="default" value="/list.do?pmid=parentclass" />
+            <location id="default" value="operation=list;entity=parentclass" />
         </menu-item>
     </menu-list>
 

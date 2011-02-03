@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<external-converters>
+    <external-converter id="edit-50-string">
+        <converter class="org.jpos.ee.pm.vaadin.converters.VaadinEditStringConverter" operations="add edit">
+            <properties>
+                <property name="max-length" value="50" />
+            </properties>
+        </converter>
+    </external-converter>
+
+    <external-converter id="edit-string">
+        <converter class="org.jpos.ee.pm.vaadin.converters.VaadinEditStringConverter" operations="add edit"/>
+    </external-converter>
+
+    <external-converter id="edit-decimal">
+        <converter class="org.jpos.ee.pm.vaadin.converters.EditDecimalConverter" operations="add edit"/>
+    </external-converter>
+
+    <external-converter id="show-key">
+        <converter class="org.jpos.ee.pm.vaadin.converters.ShowLocalizedStringConverter" operations="show list"/>
+    </external-converter>
+
+    <external-converter id="show-bool">
+        <converter class="org.jpos.ee.pm.vaadin.converters.ShowBooleanConverter" operations="show list"/>
+    </external-converter>
+
+    <external-converter id="show-list">
+        <converter class="org.jpos.ee.pm.vaadin.converters.ShowCollectionConverter" operations="list"/>
+    </external-converter>
+
+    <external-converter id="edit-bool">
+        <converter class="org.jpos.ee.pm.vaadin.converters.EditBooleanConverter" operations="add edit"/>
+    </external-converter>
+
+    <external-converter id="edit-date">
+        <converter class="org.jpos.ee.pm.vaadin.converters.EditDateConverter" operations="add edit">
+            <properties>
+                <property name="format" value="dd/MM/yyyy" />
+            </properties>
+        </converter>
+    </external-converter>
+
+    <external-converter id="edit-long">
+        <converter class="org.jpos.ee.pm.vaadin.converters.EditLongConverter" operations="edit" />
+    </external-converter>
+
+    <external-converter id="add-long">
+        <converter class="org.jpos.ee.pm.vaadin.converters.EditLongConverter" operations="add" />
+    </external-converter>
+    
+    <external-converter id="show-cash">
+        <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
+            <properties>
+                <property name="filename" value="cfg/converters/show.decimal.converter" />
+                <property name="prefix" value="U$S " />
+                <property name="suffix" value=" .-" />
+                <property name="format" value="#0.##" />
+            </properties>
+        </converter>
+    </external-converter>
+    
+    <external-converter id="weak">
+<!--        <converter class="org.jpos.ee.pm.struts.converter.WeakConverter" operations="show edit" >
+            <properties>
+                <property name="weak-entity" value="weakclass" />
+            </properties>
+        </converter>-->
+    </external-converter>
+
+</external-converters>

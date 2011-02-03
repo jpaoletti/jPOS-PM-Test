@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menu SYSTEM "locations.dtd">
 <locations>
-       <location id="pmstruts" class="org.jpos.ee.pm.struts.MenuItemLocationStruts"/>
-       <location id="external" class="org.jpos.ee.pm.struts.MenuItemLocationExternal"/>
+       <location id="default" class="org.jpos.ee.pm.vaadin.MenuItemLocationDefault"/>
+       <location id="external" class="org.jpos.ee.pm.vaadin.MenuItemLocationDefault"/>
+<!--       <location id="external" class="org.jpos.ee.pm.vaadin.MenuItemLocationExternal"/>-->
 </locations>

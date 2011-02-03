@@ -20,7 +20,7 @@
     <field id="amount" width="100" display="all" align="right">
         <converters>
             <econverter id="show-cash" />
-            <converter class="org.jpos.ee.pm.struts.converter.EditDecimalConverter" operations="add edit" />
+            <econverter id="edit-decimal" />
         </converters>
     </field>
     <field id="date" width="70" display="all">
@@ -31,11 +31,7 @@
                     <property name="format" value="dd/MM/yyyy" />
                 </properties>
             </converter>
-            <converter class="org.jpos.ee.pm.struts.converter.EditDateConverter" operations="add edit">
-                <properties>
-                    <property name="format" value="dd/MM/yyyy" />
-                </properties>
-            </converter>
+            <econverter id="edit-date"/>
         </converters>
     </field>
     <field id="datetime" width="130" display="all" >
@@ -48,16 +44,18 @@
             </converter>
         </converters>
     </field>
+
     <field id="active" width="30" display="all" align="center">
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.ShowBooleanConverter" operations="list show" />
-            <converter class="org.jpos.ee.pm.struts.converter.EditBooleanConverter" operations="add edit" />
+            <econverter id="show-bool" operations="list show" />
+            <econverter id="edit-bool" operations="add edit" />
         </converters>
     </field>
+
     <field id="key" width="150" >
         <converters>
-            <converter class="org.jpos.ee.pm.struts.converter.ShowLocalizedStringConverter" operations="show list" />
-            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+            <econverter id="show-key" />
+            <econverter id="edit-string" />
         </converters>
     </field>
     <field id="size" width="50" >
@@ -68,8 +66,8 @@
                     <property name="suffix" value=" cm" />
                 </properties>
             </converter>
-            <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add edit" />
+            <econverter id="add-long"/>
+            <econverter id="edit-long"/>
         </converters>
-        
     </field>
 </entity>

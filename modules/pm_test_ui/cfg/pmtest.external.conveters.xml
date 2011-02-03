@@ -7,9 +7,15 @@
             </properties>
         </converter>
     </external-converter>
+
+    <external-converter id="edit-string">
+        <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit"/>
+    </external-converter>
+
     <external-converter id="edit-long">
         <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add" />
     </external-converter>
+    
     <external-converter id="add-long">
         <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="edit" />
     </external-converter>
@@ -20,6 +26,13 @@
                 <property name="prefix" value="U$S " />
                 <property name="suffix" value=" .-" />
                 <property name="format" value="#0.##" />
+            </properties>
+        </converter>
+    </external-converter>
+    <external-converter id="weak">
+        <converter class="org.jpos.ee.pm.struts.converter.WeakConverter" operations="show edit" >
+            <properties>
+                <property name="weak-entity" value="weakclass" />
             </properties>
         </converter>
     </external-converter>
