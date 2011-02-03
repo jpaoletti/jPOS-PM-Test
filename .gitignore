@@ -11,6 +11,8 @@ modules/system
 modules/pm_core
 modules/pm_security_core
 modules/pm_struts
+modules/pm_vaadin
+modules/jpos_web_lib
 modules/commons
 build/
 dist/
