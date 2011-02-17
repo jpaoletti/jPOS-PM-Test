@@ -5,7 +5,7 @@ build.*
 !modules/build.*
 bin
 modules/constants
-modules/jetty6
+modules/jetty7
 modules/jpos
 modules/system
 modules/pm_core
