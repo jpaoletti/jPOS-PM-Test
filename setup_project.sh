@@ -58,7 +58,7 @@ ln -s $JPOSEE/build.properties $GOAL/
 
 ln -s $JPOSEE/opt/commons $GOAL/modules/
 ln -s $JPOSEE/opt/constants $GOAL/modules/
-ln -s $JPOSEE/opt/jetty6 $GOAL/modules/
+ln -s $JPOSEE/opt/jetty7 $GOAL/modules/
 ln -s $JPOSEE/modules/jpos $GOAL/modules/
 ln -s $JPOSEE/modules/system $GOAL/modules/
 ln -s $JPOSPM/modules/pm_core $GOAL/modules/
