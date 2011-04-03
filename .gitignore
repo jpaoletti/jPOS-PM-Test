@@ -1,7 +1,6 @@
 *~
 .*
 !.gitignore
-build.*
 !modules/build.*
 modules/constants
 modules/jpos

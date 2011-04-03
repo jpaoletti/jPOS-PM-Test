@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ "$1"x == "x" ]; then
+  echo "Wrong number of parameters. Usage: $0 projectname";
+  exit 1
+fi
+
+mkdir $1 || exit 1
+echo "Creating directory $1"
+svn add $1
+svn commit -m 'Created $1 jPOS-EE project' $1
+cd $1
+svn export https://jposee.googlecode.com/svn/trunk/build.xml
+svn export https://jposee.googlecode.com/svn/trunk/build.properties
+svn export https://jposee.googlecode.com/svn/trunk/bin
+touch devel.properties
+mkdir modules
+svn add build.xml build.properties devel.properties modules bin
+
+svn ps svn:externals . --file - <<!
+modules/jpos http://jposee.googlecode.com/svn/trunk/modules/jpos
+modules/commons http://jposee.googlecode.com/svn/trunk/opt/commons
+!
+
+svn ps svn:ignore . --file - <<!
+modules/jpos
+modules/commons
+build
+dist
+!
+svn commit -m 'Initial export on project $1' .
+svn update
+svn status
+

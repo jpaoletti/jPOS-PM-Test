@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd `dirname $0`/../build || exit 1
+rm -f deploy/shutdown.xml
+java -server \
+    -Xmx1G \
+    -Dcom.sun.management.jmxremote \
+    -Dorg.mortbay.xml.XmlParser.NotValidating=true \
+    -jar jpos-ee.jar $*
+
