@@ -37,7 +37,6 @@ fi
 
 ln -s $JPOSEE/opt/commons $GOAL/modules/
 ln -s $JPOSEE/opt/constants $GOAL/modules/
-ln -s $JPOSEE/opt/jetty6 $GOAL/modules/
 ln -s $JPOSEE/modules/jpos $GOAL/modules/
 ln -s $JPOSEE/modules/system $GOAL/modules/
 
