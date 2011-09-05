@@ -7,12 +7,11 @@
             </properties>
         </converter>
     </external-converter>
+    
     <external-converter id="edit-long">
         <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="add" />
     </external-converter>
-    <external-converter id="add-long">
-        <converter class="org.jpos.ee.pm.struts.converter.EditLongConverter" operations="edit" />
-    </external-converter>
+
     <external-converter id="show-cash">
         <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
             <properties>
@@ -23,5 +22,38 @@
             </properties>
         </converter>
     </external-converter>
+    <external-converter id="edit-date">
+        <converter class="org.jpos.ee.pm.struts.converter.EditDateConverter" operations="add edit">
+            <properties>
+                <property name="format" value="dd/MM/yyyy" />
+            </properties>
+        </converter>
+    </external-converter>
+    
+    <external-converter id="show-date">
+        <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="list show" >
+            <properties>
+                <property name="filename" value="cfg/converters/show.date.converter" />
+                <property name="format" value="dd/MM/yyyy" />
+            </properties>
+        </converter>
+    </external-converter>
 
+    <external-converter id="show-datetime">
+        <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="all" >
+            <properties>
+                <property name="filename" value="cfg/converters/show.date.converter" />
+                <property name="format" value="dd/MM/yyyy HH:mm:ss" />
+            </properties>
+        </converter>
+    </external-converter>
+
+    <external-converter id="show-cm">
+        <converter class="org.jpos.ee.pm.converter.GenericConverter" operations="show list" >
+            <properties>
+                <property name="filename" value="cfg/converters/show.tostring.converter" />
+                <property name="suffix" value=" cm" />
+            </properties>
+        </converter>
+    </external-converter>
 </external-converters>
