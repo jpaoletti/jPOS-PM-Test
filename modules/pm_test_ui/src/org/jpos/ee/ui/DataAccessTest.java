@@ -20,18 +20,20 @@ package org.jpos.ee.ui;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.jpos.ee.Constants;
 import org.jpos.ee.pm.core.DataAccess;
+import org.jpos.ee.pm.core.Entity;
 import org.jpos.ee.pm.core.EntityFilter;
 import org.jpos.ee.pm.core.PMContext;
+import org.jpos.ee.pm.core.PMCoreConstants;
 import org.jpos.ee.pm.core.PMException;
 
 /**
  *
  * @author jpaoletti
  */
-public abstract class DataAccessTest implements DataAccess, Constants {
+public abstract class DataAccessTest implements DataAccess {
 
+    private Entity entity;
     protected List<Object> list;
 
     protected abstract void fill();
@@ -49,7 +51,7 @@ public abstract class DataAccessTest implements DataAccess, Constants {
             fill();
         }
         List result = new ArrayList(list);
-        Collections.sort(result, new TestComparator(ctx.getString(PM_LIST_ORDER), (Boolean)ctx.get(PM_LIST_ASC)));
+        Collections.sort(result, new TestComparator(ctx.getString(PMCoreConstants.PM_LIST_ORDER), (Boolean) ctx.get(PMCoreConstants.PM_LIST_ASC)));
         int f = (from == null) ? 0 : from;
         int c = (int) ((count == null) ? count(ctx) : count);
         System.out.println(String.format("count: %d ; c: %d, f: %d", count(ctx), c, f));
@@ -85,5 +87,13 @@ public abstract class DataAccessTest implements DataAccess, Constants {
 
     public EntityFilter createFilter(PMContext ctx) throws PMException {
         return null;
+    }
+
+    public Entity getEntity() {
+        return entity;
+    }
+
+    public void setEntity(Entity entity) {
+        this.entity = entity;
     }
 }
