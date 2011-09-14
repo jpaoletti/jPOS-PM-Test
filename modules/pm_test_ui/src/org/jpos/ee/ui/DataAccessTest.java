@@ -23,8 +23,8 @@ import java.util.List;
 import org.jpos.ee.pm.core.DataAccess;
 import org.jpos.ee.pm.core.Entity;
 import org.jpos.ee.pm.core.EntityFilter;
+import org.jpos.ee.pm.core.ListSort;
 import org.jpos.ee.pm.core.PMContext;
-import org.jpos.ee.pm.core.PMCoreConstants;
 import org.jpos.ee.pm.core.PMException;
 
 /**
@@ -46,12 +46,12 @@ public abstract class DataAccessTest implements DataAccess {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public List<?> list(PMContext ctx, EntityFilter filter, Integer from, Integer count) throws PMException {
+    public List<?> list(PMContext ctx, EntityFilter filter, ListSort sort, Integer from, Integer count) throws PMException {
         if (list == null) {
             fill();
         }
         List result = new ArrayList(list);
-        Collections.sort(result, new TestComparator(ctx.getString(PMCoreConstants.PM_LIST_ORDER), (Boolean) ctx.get(PMCoreConstants.PM_LIST_ASC)));
+        Collections.sort(result, new TestComparator(sort.getFieldId(), sort.isAsc()));
         int f = (from == null) ? 0 : from;
         int c = (int) ((count == null) ? count(ctx) : count);
         System.out.println(String.format("count: %d ; c: %d, f: %d", count(ctx), c, f));
